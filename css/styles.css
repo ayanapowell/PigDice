@@ -7,7 +7,7 @@ body{
   font-family: 'Rokkitt', serif;
 }
 h1 {
-  font-size: 45px;
+  font-size: 50px;
   text-shadow: 1px 1px red;
 }
 h3{
@@ -16,7 +16,57 @@ h3{
 #output {
   font-size: 25px;
 }
+#holdOne, #holdTwo {
+  color: blue;
+}
+#slogan {
+  text-align: center;
+  color: red;
+  padding: 20px;
+  font-family: 'Bungee', cursive;
+  border-bottom: 1px solid #f2f2f2;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15%;
+}
 .row {
   margin-top: 6rem;
   text-align: center;
+}
+.player1, .player2 {
+  border: 1px dashed #fff;
+  padding: 3rem;
+  width: 40%;
+}
+.player2 {
+  margin-left: 10%;
+}
+.player1 button, .player2 button {
+  margin: 2rem;
+}
+@media (max-width: 1445px) {
+  .player1, .player2 {
+    background-color: #000;
+    border: 1px solid #fff;
+  }
+}
+@media (max-width: 993px) {
+  .player1, .player2 {
+    width: 70%;
+    margin-left: 20%;
+  }
+  .player2 {
+    margin-top: 6rem;
+  }
+}
+@media (max-width: 436px) {
+  .player1, .player2 {
+    width: 100%;
+    margin-left: 0;
+  }
+  .player2 {
+    margin-top: 6rem;
+    margin-left: 0;
+  }
 }
