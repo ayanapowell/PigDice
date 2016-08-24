@@ -13,17 +13,25 @@
           <div class="col-md-6 player1">
             <h1>Player 1</h1>
             <button class="btn btn-danger" id="rollOne">Roll</button>
-            <button class="btn btn-primary">Hold</button>
+            <button class="btn btn-primary" id="holdOne">Hold</button>
           </div>
         <div class="col-md-6 player2">
           <h1>Player 2</h1>
           <button class="btn btn-danger" id="rollTwo">Roll</button>
-          <button class="btn btn-primary">Hold</button>
+          <button class="btn btn-primary" id="holdTwo">Hold</button>
         </div>
       </div>
       <div id="output" class="row">
-        <span class="diceroll"></span></br>
-        <span class="total"></span>
+        <div id="output1" class="col-md-6">
+          <span class="diceroll"></span></br>
+          <span class="total"></span>
+          <h3 class="turn1">Your turn is over!</h3>
+        </div>
+        <div id="output2" class="col-md-6">
+          <span class="diceroll"></span></br>
+          <span class="total"></span>
+          <h3 class="turn2">Your turn is over!</h3>
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
