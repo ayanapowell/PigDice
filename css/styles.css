@@ -5,19 +5,13 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Rokkitt', serif;
-
 }
 h1 {
   font-size: 45px;
   text-shadow: 1px 1px red;
 }
-
 h3{
   display: none;
-}
-
-.show {
-  display: block;
 }
 #output {
   font-size: 25px;

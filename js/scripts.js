@@ -44,7 +44,8 @@ $('#rollOne').click(function() {
     playerOne.resetScore(diceRoll);
     $('#output1 .diceroll').text("Hey Player 1, you rolled a " + diceRoll);
     $('#output1 .total').text(playerOne.showScore());
-    $(".turn1").addClass('show');
+    $(".turn1").show();
+    $(".turn2").hide();
     $("#rollOne").prop('disabled', true);
     $("#holdOne").prop('disabled', true);
     $("#rollTwo").prop('disabled', false);
@@ -60,11 +61,11 @@ $('#holdOne').click(function() {
   $("#holdTwo").prop('disabled', false);
   $("#rollOne").prop('disabled', true);
   $("#holdOne").prop('disabled', true);
-  // if (holdScoreOne === 100){
-  //   $("#output").text("<h1> Player One Wins!!!!</h1>");
-  //   $('.playerOne').fadeOut();
-  //   $('.player2').fadeOut();
-  // }
+  if (holdScoreOne === 100){
+    $("#output").text("<h1> Player One Wins!!!!</h1>");
+    $('.player1').fadeOut();
+    $('.player2').fadeOut();
+  }
 });
 
 // Player Two Roll
@@ -80,7 +81,8 @@ $('#rollTwo').click(function() {
     playerTwo.resetScore(diceRoll);
     $('#output2 .diceroll').text("Hey Player 2, you rolled a " + diceRoll);
     $('#output2 .total').text(playerTwo.showScore());
-    $(".turn2").addClass('show');
+    $(".turn2").show();
+    $(".turn1").hide();
     $("#rollTwo").prop('disabled', true);
     $("#holdTwo").prop('disabled', true);
     $("#rollOne").prop('disabled', false);
@@ -95,5 +97,10 @@ $('#holdTwo').click(function() {
   $("#holdTwo").prop('disabled', true);
   $("#rollOne").prop('disabled', false);
   $("#holdOne").prop('disabled', false);
+  if (holdScoreTwo === 100){
+    $("#output").text("<h1> Player Two Wins!!!!</h1>");
+    $('.player1').fadeOut();
+    $('.player2').fadeOut();
+  }
 });
 });
