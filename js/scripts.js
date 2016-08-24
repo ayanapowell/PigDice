@@ -9,37 +9,53 @@ $(document).ready(function() {
 
   Player.prototype.addScore = function(total){
     this.score = this.score + total;
-    alert("Total = " + this.score);
-
   }
 
   Player.prototype.resetScore = function(total){
     this.score = 0;
-    alert("Total = " + this.score);
 
   }
 
   Player.prototype.showScore = function() {
-    return "Hey, " + this.name + "! Your score is: " + this.score;
+    return "Hey, " + this.name + "! Your total is: " + this.score;
   }
 
 //ui logic
 var score = 0;
 var name = "Anna";
 var playerOne = new Player(name, score);
+var playerTwo = new Player(name, score);
 
-$('#roll').click(function() {
+// Player One Roll
+$('#rollOne').click(function() {
   var diceRoll =  Math.floor(Math.random() * 6 +1);
 
   if(diceRoll > 1) {
-    alert("Diceroll = " + diceRoll);
     playerOne.addScore(diceRoll);
-    $('#output').text(playerOne.showScore());
+    $('.diceroll').text("Hey Player 1, you rolled a " + diceRoll);
+    $('.total').text(playerOne.showScore());
     return;
   } else if (diceRoll === 1) {
-    alert("Diceroll = " + diceRoll);
     playerOne.resetScore(diceRoll);
-    $('#output').text(playerOne.showScore());
+    $('.diceroll').text("Hey Player 1, you rolled a " + diceRoll);
+    $('.total').text(playerOne.showScore());
+    return;
+  }
+});
+
+// Player Two Roll
+$('#rollTwo').click(function() {
+  var diceRoll =  Math.floor(Math.random() * 6 +1);
+
+  if(diceRoll > 1) {
+    playerTwo.addScore(diceRoll);
+    $('.diceroll').text("Hey Player 2, you rolled a " + diceRoll);
+    $('.total').text(playerTwo.showScore());
+    return;
+  } else if (diceRoll === 1) {
+    playerTwo.resetScore(diceRoll);
+    $('.diceroll').text("Hey Player 2, you rolled a " + diceRoll);
+    $('.total').text(playerTwo.showScore());
     return;
   }
 });

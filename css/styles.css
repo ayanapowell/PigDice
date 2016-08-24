@@ -1,0 +1,20 @@
+body{
+  color: #fff;
+  background-image: url("../img/dice.jpg");
+  background-color: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Rokkitt', serif;
+
+}
+h1 {
+  font-size: 45px;
+  text-shadow: 1px 1px red;
+}
+#output {
+  font-size: 25px;
+}
+.row {
+  margin-top: 6rem;
+  text-align: center;
+}
