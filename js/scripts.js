@@ -1,6 +1,6 @@
 // business logic
 $(document).ready(function() {
-
+/* functions */
   function Player(name, score) {
     this.name = name;
     this.score = score;
@@ -12,7 +12,7 @@ $(document).ready(function() {
     this.score = 0;
   }
   Player.prototype.showScore = function() {
-    return "Your total is: " + this.score;
+    return this.score;
   }
 //ui logic
   var score = 0;
@@ -21,20 +21,22 @@ $(document).ready(function() {
   var playerTwo = new Player(name, score);
   var holdScoreOne = [];
   var holdScoreTwo = [];
+
   // Player One Roll
   $('#rollOne').click(function() {
     var diceRoll =  Math.floor(Math.random() * 6 +1);
 
     if(diceRoll > 1) {
       playerOne.addScore(diceRoll);
-      $('#output1 .diceroll').text("Hey Player 1, you rolled a " + diceRoll);
+      $('#output1 .diceroll').text("Roll: " + diceRoll);
       $('#output1 .total').text(playerOne.showScore());
       return;
     } else if (diceRoll === 1) {
       playerOne.resetScore(diceRoll);
-      $('#output1 .diceroll').text("Hey Player 1, you rolled a " + diceRoll);
+      $('#output1 .diceroll').text("Roll: " + diceRoll);
       $('#output1 .total').text(playerOne.showScore());
       $(".turn1").show();
+      $(".turn2").hide();
       $(".player1 button").prop('disabled', true);
       $(".player2 button").prop('disabled', false);
       return;
@@ -56,12 +58,12 @@ $(document).ready(function() {
 
     if(diceRoll > 1) {
       playerTwo.addScore(diceRoll);
-      $('#output2 .diceroll').text("Hey Player 2, you rolled a " + diceRoll);
+      $('#output2 .diceroll').text("Roll: " + diceRoll);
       $('#output2 .total').text(playerTwo.showScore());
       return;
     } else if (diceRoll === 1) {
       playerTwo.resetScore(diceRoll);
-      $('#output2 .diceroll').text("Hey Player 2, you rolled a " + diceRoll);
+      $('#output2 .diceroll').text("Roll: " + diceRoll);
       $('#output2 .total').text(playerTwo.showScore());
       $(".turn2").show();
       $(".turn1").hide();
@@ -80,4 +82,13 @@ $(document).ready(function() {
       $("#output").text("<h1> Player Two Wins!!!!</h1>");
     }
   });
-});
+
+  /*-------------Animations--------------*/
+  $('.subtitle').click(function() {
+    $('#introduction').slideUp("2000");
+    setTimeout(function() {
+      $('.container').slideDown(800);
+    },500)
+  })
+
+});/* doc .ready ending*/

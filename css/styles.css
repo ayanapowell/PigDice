@@ -6,23 +6,43 @@ body{
   background-repeat: no-repeat;
   font-family: 'Rokkitt', serif;
 }
+
 h1 {
-  font-size: 50px;
+  font-size: 70px;
   text-shadow: 1px 1px red;
 }
+
 h3{
   display: none;
 }
-#output {
-  font-size: 25px;
+h2{
+  font-size: 40px;
+  /*color: #f5c856;*/
+  font-family: 'Faster One', cursive;
 }
+#scoreboard {
+  font-size: 25px;
+  background-color: #000;
+  border: 2px solid  #595959;
+  border-radius: 5px;
+  width: 60%;
+  margin-left: 15%;
+  min-height: 320px;
+  margin-top: 10%;
+}
+
+#scoreboard h2{
+  color: yellow;
+}
+
 #holdOne, #holdTwo {
   color: blue;
 }
+
 #slogan {
   text-align: center;
   color: red;
-  padding: 20px;
+  padding: 40px;
   font-family: 'Bungee', cursive;
   border-bottom: 1px solid #f2f2f2;
   width: 60%;
@@ -30,27 +50,74 @@ h3{
   margin-right: auto;
   margin-bottom: 15%;
 }
+
+#output1{
+  margin-left: 12%;
+}
+
+#output2{
+  margin-left: 12%;
+}
+
+#output1, #output2 {
+  border: 3px solid  #595959;
+  width: 30%;
+  border-radius: 5px;
+  min-height: 185px;
+  margin-top: 2rem;
+  padding: 10px;
+}
+.container {
+  display: none;
+}
+
+.title {
+  margin-top: 200px;
+  text-align: center;
+  font-size: 100px;
+}
+
+.subtitle {
+  cursor: pointer;
+  text-align: center;
+}
+
+.subtitle:hover {
+  color: #a6a6a6;
+}
+
 .row {
   margin-top: 6rem;
   text-align: center;
 }
+
 .player1, .player2 {
   border: 1px dashed #fff;
   padding: 3rem;
   width: 40%;
 }
+
 .player2 {
   margin-left: 10%;
 }
+
 .player1 button, .player2 button {
   margin: 2rem;
 }
+
+.total{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 45px;
+  color: #b62f2f;
+}
+
 @media (max-width: 1445px) {
   .player1, .player2 {
     background-color: #000;
     border: 1px solid #fff;
   }
 }
+
 @media (max-width: 993px) {
   .player1, .player2 {
     width: 70%;
@@ -59,7 +126,19 @@ h3{
   .player2 {
     margin-top: 6rem;
   }
+  #scoreboard{
+    width: 70%;
+    margin-left: 20%;
+  }
+  #output1, #output2 {
+    width: 80%;
+    padding: 10px;
+  }
+  #output2 {
+    margin-bottom: 2rem;
+  }
 }
+
 @media (max-width: 436px) {
   .player1, .player2 {
     width: 100%;

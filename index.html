@@ -4,26 +4,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One|Press+Start+2P" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <title>Pig Dice</title>
   </head>
   <body>
+    <div id="introduction">
+      <h1 class="title">DICE OR DIE</h1>
+      <h2 class="subtitle">Let's play.</h2>
+    </div>
     <div class="container">
       <h1 id="slogan">Dice Or Die</h1>
       <div class="row">
           <div class="col-md-6 player1">
-            <h1>Player 1</h1>
+            <h1>Home</h1>
             <button class="btn btn-default btn-lg" id="rollOne">Roll</button>
             <button class="btn btn-default btn-lg" id="holdOne">Hold</button>
           </div>
         <div class="col-md-6 player2">
-          <h1>Player 2</h1>
+          <h1>Visitor</h1>
           <button class="btn btn-default btn-lg" id="rollTwo">Roll</button>
           <button class="btn btn-default btn-lg" id="holdTwo">Hold</button>
         </div>
       </div>
-      <div id="output" class="row">
+      <div id="scoreboard" class="row">
+        <h2>Scoreboard</h2>
         <div id="output1" class="col-md-6">
           <span class="diceroll"></span></br>
           <span class="total"></span>
