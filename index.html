@@ -12,18 +12,22 @@
   <body>
     <div id="introduction">
       <h1 class="title">DICE OR DIE</h1>
-      <h2 class="subtitle">Let's play.</h2>
+      <form id="form">
+        <input type="text" id="nameOne" placeholder="Player One, enter your name" class="form-control">
+        <input type="text" id="nameTwo" placeholder="Player Two, enter your name" class="form-control">
+        <h2 class="subtitle">Let's play.</h2>
+      </form>
     </div>
     <div class="container">
       <h1 id="slogan">Dice Or Die</h1>
       <div class="row">
           <div class="col-md-6 player1">
-            <h1>Home</h1>
+            <h1></h1>
             <button class="btn btn-default btn-lg" id="rollOne">Roll</button>
             <button class="btn btn-default btn-lg" id="holdOne">Hold</button>
           </div>
         <div class="col-md-6 player2">
-          <h1>Visitor</h1>
+          <h1></h1>
           <button class="btn btn-default btn-lg" id="rollTwo">Roll</button>
           <button class="btn btn-default btn-lg" id="holdTwo">Hold</button>
         </div>

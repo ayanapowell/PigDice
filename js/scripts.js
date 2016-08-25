@@ -1,8 +1,8 @@
 // business logic
 $(document).ready(function() {
 /* functions */
-  function Player(name, score, turnTotal) {
-    this.userName = name;
+  function Player(userName, score, turnTotal) {
+    this.userName = userName;
     this.score = score;
     this.turnTotal = turnTotal;
   };
@@ -12,11 +12,12 @@ $(document).ready(function() {
   };
 
 //ui logic
+  var nameOne;
+  var nameTwo;
   var score = 0;
-  var name = "Anna";
   var turn_total =0;
-  var playerOne = new Player(name, score, turn_total);
-  var playerTwo = new Player(name, score, turn_total);
+  var playerOne = new Player(nameOne, score, turn_total);
+  var playerTwo = new Player(nameTwo, score, turn_total);
   var holdScoreOne = [];
   var holdScoreTwo = [];
 
@@ -81,10 +82,17 @@ $(document).ready(function() {
   });
   /*-------------Animations--------------*/
   $('.subtitle').click(function() {
+    nameOne = $("#nameOne").val();
+    nameTwo = $("#nameTwo").val();
+    if(nameOne === "" || nameTwo === ""){
+      alert("Enter a Name!");
+      return;
+    };
     $('#introduction').slideUp("2000");
     setTimeout(function() {
       $('.container').slideDown(800);
     },500)
+  $('.player1 h1').text(nameOne);
+  $('.player2 h1').text(nameTwo);
   })
-
 });/* doc .ready ending*/
