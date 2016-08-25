@@ -1,88 +1,84 @@
 // business logic
 $(document).ready(function() {
 /* functions */
-  function Player(name, score) {
-    this.name = name;
+  function Player(name, score, turnTotal) {
+    this.userName = name;
     this.score = score;
+    this.turnTotal = turnTotal;
   };
-  Player.prototype.addScore = function(total){
-    this.score = this.score + total;
-  }
-  Player.prototype.resetScore = function(total){
-    this.score = 0;
-  }
-  Player.prototype.showScore = function() {
-    return this.score;
-  }
+
+  Player.prototype.addScore = function(dice){
+   this.score += dice;
+  };
+
 //ui logic
   var score = 0;
   var name = "Anna";
-  var playerOne = new Player(name, score);
-  var playerTwo = new Player(name, score);
+  var turn_total =0;
+  var playerOne = new Player(name, score, turn_total);
+  var playerTwo = new Player(name, score, turn_total);
   var holdScoreOne = [];
   var holdScoreTwo = [];
 
-  // Player One Roll
   $('#rollOne').click(function() {
     var diceRoll =  Math.floor(Math.random() * 6 +1);
-
-    if(diceRoll > 1) {
-      playerOne.addScore(diceRoll);
+     if(diceRoll > 1) {
+      playerOne.turnTotal += diceRoll;
       $('#output1 .diceroll').text("Roll: " + diceRoll);
-      $('#output1 .total').text(playerOne.showScore());
+      $('#output1 .total').text(playerOne.turnTotal);
       return;
     } else if (diceRoll === 1) {
-      playerOne.resetScore(diceRoll);
+      playerOne.turnTotal = 0;
       $('#output1 .diceroll').text("Roll: " + diceRoll);
-      $('#output1 .total').text(playerOne.showScore());
+      $('#output1 .total').text(playerOne.score);
       $(".turn1").show();
       $(".turn2").hide();
       $(".player1 button").prop('disabled', true);
       $(".player2 button").prop('disabled', false);
-      return;
-    }
+   }
   });
   $('#holdOne').click(function() {
+    playerOne.addScore(playerOne.turnTotal);
     holdScoreOne.splice(0, 1, playerOne.score);
-    console.log(holdScoreOne);
+    $('#output1 .total').text(playerOne.score);
+    // alert(holdScoreOne);
     $(".player2 button").prop('disabled', false);
     $(".player1 button").prop('disabled', true);
     $(".turn2").hide();
     if (holdScoreOne === 100){
-      $("#output").text("<h1> Player One Wins!!!!</h1>");
-    }
+       $("#output").text("<h1> You Win!!!!</h1>");
+     }
   });
   // Player Two Roll
   $('#rollTwo').click(function() {
     var diceRoll =  Math.floor(Math.random() * 6 +1);
-
-    if(diceRoll > 1) {
-      playerTwo.addScore(diceRoll);
+     if(diceRoll > 1) {
+      playerTwo.turnTotal += diceRoll;
       $('#output2 .diceroll').text("Roll: " + diceRoll);
-      $('#output2 .total').text(playerTwo.showScore());
+      $('#output2 .total').text(playerTwo.turnTotal);
       return;
     } else if (diceRoll === 1) {
-      playerTwo.resetScore(diceRoll);
+      playerTwo.turnTotal = 0;
       $('#output2 .diceroll').text("Roll: " + diceRoll);
-      $('#output2 .total').text(playerTwo.showScore());
+      $('#output2 .total').text(playerTwo.score);
       $(".turn2").show();
       $(".turn1").hide();
       $(".player2 button").prop('disabled', true);
       $(".player1 button").prop('disabled', false);
-      return;
-    }
+   }
   });
   $('#holdTwo').click(function() {
+    playerTwo.addScore(playerTwo.turnTotal);
     holdScoreTwo.splice(0, 1, playerTwo.score);
-    console.log(holdScoreTwo);
-    $(".player2 button").prop('disabled', true);
+    $('#output2 .total').text(playerTwo.score);
+    // alert(holdScoreOne);
     $(".player1 button").prop('disabled', false);
+    $(".player2 button").prop('disabled', true);
     $(".turn1").hide();
     if (holdScoreTwo === 100){
-      $("#output").text("<h1> Player Two Wins!!!!</h1>");
-    }
+       $("#output").text("<h1> You Win!!!!</h1>");
+     }
   });
-
   /*-------------Animations--------------*/
   $('.subtitle').click(function() {
     $('#introduction').slideUp("2000");
